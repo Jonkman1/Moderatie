@@ -1,0 +1,52 @@
+---
+title: Apa7 Template
+format:
+  apa7-pdf:
+    keep-tex: true  
+  apa7-html: default
+author:
+  - name: Sarah Malloc
+    affiliations:
+      - name: An Organization
+        department: The Department
+        address: 1 Main St
+        city: Boston
+        country: USA
+        postal-code: 02210-1022
+      - A second affilication
+    orcid: 0000-0000-0000-0000
+    email: sm@example.org
+    url: https://example.org/
+  - name: Eliza Dealloc
+    affiliations:
+      - Another Affiliation
+abstract: |
+  This document is a template demonstrating the Apa7 format.
+keywords: [template, demo]
+bibliography: bibliography.bib  
+---
+
+## Introduction {#sec-intro}
+
+*TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
