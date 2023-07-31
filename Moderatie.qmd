@@ -1,12 +1,14 @@
 ---
 title: "Enkelvoudige, meervoudige en modererdende regressie"
-format: pdf
+format: html
 editor: visual
 ---
 
 # Inleiding
 
-Onlangs heb ik een groep studenten van Forensische Orthopedagogiek van de Universeriteit van Amsterdam begeleid bij het schrijven van hun masterscriptie. Ze hadden met elkaar een sample verzameld. Ze moesten op zoek naar de relatie tussen cannabisgebruik en online-blootstelling aan cannabis. Daarboven op moesten ze op zoek naar of bepaalde variabelen deze invloed beïnvloeden. Daarvoor moesten ze een moderatieanalyse uitvoeren. In deze korte blog laat ik zien hoe ik deze techniek zou uitvoeren. Dat heb ik de studenten ook laten zien en hier deel ik het met anderen. Eerst introduceer ik heel kort moderatie analyse als onderdeel van regressieanalyse en wat de achterliggende ideeën ervan. Dan ligt ik kort de dataset uit die gebruikt is. Dan laat ik zien welke pakketten van R ik hierbij heb gebruikt en hoe deze pakketten ons werk hierbij kunnen ondersteunen. Dan laat ik twee soorten modernatieanalyses zien. Één analyse waarbij de moderator een categoriale variabele en een andere analyse waarbij de moderator een continue variabele is. Dan laat ik kort de tekst zien hoe de tekst er dan uitziet.
+Onlangs heb ik een groep studenten van Forensische Orthopedagogiek van de Universeriteit van Amsterdam begeleid bij het schrijven van hun masterscriptie. Ze hadden met elkaar een datasample verzameld. Ze moesten op zoek naar de relatie tussen cannabisgebruik en online-blootstelling aan cannabis. Daarboven op moesten ze antwoord geven op de vraag of bepaalde variabelen op de relatie van invloed zijn. Daarvoor moesten ze een moderatieanalyse uitvoeren. 
+
+In deze korte blog laat ik zien hoe ik deze techniek zou uitvoeren. Dat heb ik de studenten laten zien en hier deel ik het met anderen. Eerst introduceer ik heel kort moderatie-analyse als onderdeel van regressie-analyse en wat de achterliggende ideeën ervan. Dan lichtt ik kort de dataset uit die gebruikt is. Dan laat ik zien welke pakketten van R ik hierbij heb gebruikt en hoe deze pakketten ons werk hierbij kunnen ondersteunen. Dan laat ik twee soorten modernatieanalyses zien. Één analyse waarbij de moderator een categoriale variabele en een andere analyse waarbij de moderator een continue variabele is. Dan presenteer ik de tekst van de moderatieanalyse.
 
 # Moderatieanalyse
 
@@ -22,7 +24,7 @@ $$y= \beta_{0} + \beta_{1}{x} + \beta_{2}{z} + \beta_{3}{x}{z} + \epsilon$$ Hier
 
 # De pakketten
 
-Voor deze analyse maak ik gebruik van enkkele pakketten die hierbij - Het pakket `haven` heb ik gebruikt om het spss-databestand toegankelijk voor R te maken; - `Tidyverse` gebruik ik voor het bewerken van het bestand maar ook om de resultaten goed te kunnen visualiseren; - De pakketten `jtools` en `huxtable` zijn gebruikt om de modellen overzichtelijk in een tabel te kunnen afddrukken; - Het pakket `interactions` is gebruikt om van moderatie inzichtelijke interactieplots te tonen. De pakketten moeten wel op jouw machine geïnstalleerd zijn om te kunnen gebruiken.
+Voor deze analyse maak ik gebruik van enkkele pakketten die hierbij - Het pakket `haven` (https://haven.tidyverse.org/) heb ik gebruikt om het spss-databestand toegankelijk voor R te maken; - `Tidyverse` (https://www.tidyverse.org/) gebruik ik voor het bewerken van het bestand maar ook om de resultaten goed te kunnen visualiseren; - De pakketten `jtools` (https://jtools.jacob-long.com/) en `huxtable` (https://hughjonesd.github.io/huxtable/) zijn gebruikt om de modellen overzichtelijk in een tabel te kunnen afddrukken; - Het pakket `interactions` (https://bookdown.org/mike/data_analysis/interactions-package.html) is gebruikt om van moderatie inzichtelijke interactieplots te tonen. De pakketten moeten wel op jouw machine geïnstalleerd zijn om te kunnen gebruiken.
 
 ```{r}
 library(haven) # pakket om spss bestanden binnen te halen
@@ -194,4 +196,4 @@ interact_plot(model3, "online_can", "ouders_can", plot.points = TRUE)
 
 De dataset kreeg ik van een van de studenten toegestuurd die in haar analyses ook deze moderatoren gebruikte (ook al had ze de eerste variabele niet dichotoom gemaakt).
 
-Mijn analyse en haar tekst gebruik om in een volgende blog de resultaten ook op papier te zetten. Ik heb een opzet gemaakt voor `quarto` waar je goed wetenschappelijke artikelen kunt maken. De uiteindelijke tekst met resultaten vind je in de volgende blog.
+Mijn analyse en haar tekst (ingekort en in analyse aangepast) heb ik gebruikt om de resultaten ook op papier te zetten. Ik heb een opzet gemaakt voor `quarto` waar je goed wetenschappelijke artikelen kunt maken. De uiteindelijke tekst in pdf met resultaten vind je hier.
